@@ -23,3 +23,13 @@ func RenderExample(w http.ResponseWriter, r *http.Request) {
 
 	tmpl.Execute(w, "HELLO, Im example, you can delete me")
 }
+
+func RenderIndexPage(w http.ResponseWriter, r *http.Request) {
+	templateName := fmt.Sprintf("./%s/%s", settings.TEMPLATES_DIR, "index.html")
+	tmpl, err := template.ParseFiles(templateName)
+	if err != nil {
+		components.PrintError(fmt.Sprintf("%s", err))
+	}
+
+	tmpl.Execute(w, "")
+}

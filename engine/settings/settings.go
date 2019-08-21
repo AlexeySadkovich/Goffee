@@ -16,4 +16,5 @@ const (
 	ENABLE_ADMIN  = true
 	ADMIN_ADRESS  = "/admin"
 	DEBUG_MODE    = true
+	DB_PATH       = "db/sqlite.db"
 )

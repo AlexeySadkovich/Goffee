@@ -1,12 +1,25 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
+}
+
+:root {
+    --dark-blue: rgb(37, 48, 60);
+    --blue: #2C3D4E; 
+    --border: rgba(105, 109, 125, 0.4);
+    --text: #C3CFE0;
+    --light-blue: #69d7e4;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .wrapper {
     width: 100%;
-    background-color: #69d7e4;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--blue);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /*-------------
@@ -17,13 +30,14 @@ NAVIGATION MENU
     position: fixed;
     width: 15%;
     height: 100%;
-    background-color: #1e1e1e;
+    background-color: var(--dark-blue);
     color: #FFF;
+    border-right: 1px solid rgba(0, 0, 0, 0.2); 
 }
 
 .nav-menu h1 {
     margin-top: 20px;
-    color: #69d7e4;
+    color: var(--light-blue);
     text-align: center;
 }
 
@@ -33,25 +47,25 @@ NAVIGATION MENU
 }
 
 .menu__item {
-    padding: 5px 0 5px 40px;
     margin-bottom: 5px;
-    transition: .5s;
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.6);
     border-top: 1px solid rgba(0, 0, 0, 0.2);
-    border-left: 3px solid #69d7e4;
+    border-left: 3px solid var(--light-blue);
     cursor: pointer;
 }
 
 .menu__item a {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    padding: 5px 0 5px 10%;
     text-decoration: none;
     color: #FFF;
+    transition: .5s;
 }
 
-.menu__item:hover {
-    padding-left: 50px;
+.menu__item a:hover {
+    padding-left: 20%;
 }
 
 .uptime-block {
@@ -61,7 +75,7 @@ NAVIGATION MENU
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-left: 3px solid #69d7e4;
+    border-left: 3px solid var(--light-blue);
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.6);
 }
 
@@ -80,9 +94,9 @@ MAIN SECTION
 }
 
 .section__header {
-    color: #1e1e1e;
+    color: var(--text);
     text-transform: uppercase;
-    border-bottom: 2px solid #1e1e1e;
+    border-bottom: 2px solid var(--text);
 }
 
 .section__content-block {
@@ -94,11 +108,111 @@ MAIN SECTION
 DATABASE SECTION 
 --------------*/
 
+.tables-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .table {
-    width: 60%;
+    display: block;
+    width: 40%;
     padding: 10px;
-    color: #FFF;
+    color: var(--text);
+    margin-bottom: 15px;
+    margin-right: 15px;
+    text-decoration: none;
     border: 1px solid #1e1e1e;
+    transition: 0.7s;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.table:hover {
+    background-color: var(--dark-blue);
+}
+
+/*--------------
+ROUTES   SECTION 
+--------------*/
+
+.routes-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.route {
+    display: block;
+    width: 20%;
+    padding: 5px;
+    color: var(--text);
+    margin-bottom: 15px;
+    margin-right: 15px;
+    text-decoration: none;
+    border: 1px solid #1e1e1e;
+    transition: 0.7s;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.route:hover {
+    background-color: var(--dark-blue);
+}
+
+/*--------------
+MANAGE   SECTION 
+--------------*/
+
+.management-block {
+    color: #FFF;
+    margin-bottom: 50px;
+}
+
+.management-block h3 {
+    color: var(--light-blue);
+    margin-bottom: 10px;
+}
+
+.change-password {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.managment-form  input{
+    background-color: var(--blue);
+    color: #FFF;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+    border: none;
+    border-bottom: 1px solid var(--light-blue);
+}
+
+.managment-form button {
+    background-color: var(--dark-blue);
+    color: #FFF;
+    width: 60%;
+    height: 30px;
+    font-size: 1.1em;
+    border: none;
+    border-left: 3px solid var(--light-blue);
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.managment-form button:active {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.checkbox {
+    display: flex;
+    align-content: center;
+}
+
+.checkbox p {
+    align-self: center;
+}
+
+#confirmDeleting {
+    margin: 0;
+    margin-right: 10px;
 }
 
 /*-------- 
@@ -113,7 +227,7 @@ LOGIN PAGE
 }
 
 .login-form {
-    background-color: #1e1e1e;
+    background-color: var(--dark-blue);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,11 +238,11 @@ LOGIN PAGE
 }
 
 .login-form h1 {
-    color: #69d7e4;
+    color: var(--light-blue);
 }
 
 .login-form input {
-    background-color: #1e1e1e;
+    background-color: var(--dark-blue);
     color: #FFF;
     width: 80%;
     height: 40px;
@@ -136,11 +250,11 @@ LOGIN PAGE
     padding: 0 5px;
     border: none;
     outline: none;
-    border-bottom: 1px solid #69d7e4;
+    border-bottom: 1px solid var(--light-blue);
 }
 
 .login-form button {
-    background-color: #1e1e1e;
+    background-color: var(--dark-blue);
     color: #FFF;
     width: 60%;
     height: 30px;
@@ -148,6 +262,23 @@ LOGIN PAGE
     font-size: 1.1em;
     font-family: 'Courier New', Courier, monospace;
     border: none;
-    border-left: 3px solid #69d7e4;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--light-blue);
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.6);
 }
+
+.login-form button:active {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+#messageField {
+    color: red;
+    margin-top: 10px;
+}
+
+#messageField__deleteTable,
+#messageField__changePassword {
+    color: red;
+    margin: 10px 0;
+}
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="/static/admin/css/admin.css">
+</head>
+<body>
+    {{$AdminAdress := .AdminAdress}}
+    <div class="wrapper">
+        <nav class="nav-menu">
+            <h1>Goffee</h1>
+            <ul class="menu">
+                <li class="menu__item"><a href="/">View site</a></li>
+                <li class="menu__item"><a href="#database">Database</a></li>
+                <li class="menu__item"><a href="#routes">Routes</a></li>
+                <li class="menu__item"><a href="#manage">Manage</a></li>
+                <li class="menu__item"><a id="logoutButton">Logout</a></li>
+            </ul>
+
+            <div class="uptime-block">
+                <h3>UPTIME:</h3>
+                <p>{{.Uptime}}</p>
+            </div>
+        </nav>
+
+        <div class="content">
+
+            <div id="database" class="content-section content__database">
+                <h1 class="section__header">Database</h1>
+                <div class="section__content-block tables-list">
+                    {{range .Tables}}
+                    <a class="table" href="{{$AdminAdress}}/table?table={{.}}"><h3>{{ . }}</h3></a>
+                    {{else}}
+                    <h3>There are no tables</h3>
+                    {{end}}
+                </div>
+            </div>
+
+            <div id="routes" class="content-section">
+                <h1 class="section__header">Routes</h1>
+                <div class="section__content-block routes-list">
+                    {{range .Routes}}
+                        <a href="{{.}}" class="route">{{.}}</a>
+                    {{else}}
+                        <h3>There are no tables</h3>
+                    {{end}}
+                </div>
+            </div>
+    
+            <div id="manage" class="content-section">
+                <h1 class="section__header">Manage</h1>
+                <div class="section__content-block">
+
+                    <div class="management-block">
+                        <h3>Delete table</h3>
+                        <div class="change-password managment-form">
+                            <input id="tableName" type="text" placeholder="Table name">
+                            <div class="checkbox">
+                                <input id="confirmDeleting" type="checkbox">
+                                <p>I am sure</p>
+                            </div>
+                            <p id="messageField__deleteTable"></p>
+                            <button id="deleteTableButton">Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="management-block">
+                        <h3>Change admin password</h3>
+                        <div class="change-password managment-form">
+                            <input id="oldPassword" type="password" placeholder="Old password">
+                            <input id="newPassword" type="password" placeholder="New password">
+                            <input id="newPasswordConfirm" type="password" placeholder="Confirm password">
+                            <p id="messageField__changePassword"></p>
+                            <button id="changePassButton">Change</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        let adress = "{{.AdminAdress}}";
+    </script>
+    <script src="/static/admin/js/adminPage.js"></script>
+</body>
+</html>

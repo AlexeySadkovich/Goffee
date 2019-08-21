@@ -15,11 +15,20 @@
 
 .welcome-msg {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 img {
     width: 30%;
     position: fixed;
     bottom: 0;
+}
+
+a {
+    background-color: #69d7e4;
+    color: #FFF;
+    text-decoration: none;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #000000;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="/static/admin/css/table.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="content">
+
+                <h1>Table {{.Name}}</h1>
+
+                <div class="table-block">
+                    <table>
+                        <tr>
+                            {{range .Columns}}
+                            <td class="field-value">{{.Name}}</td>
+                            {{end}}
+                        </tr>
+                        {{range .Rows}}
+                        <tr>
+                            {{range .}}
+                            <td class="field-value">{{.}}</td>
+                            {{end}}
+                        </tr>
+                        {{end}}
+                    </table>
+                </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
