@@ -4,7 +4,7 @@ package settings
 	SETTINGS FILE
 
 	(Do it carefully)
-(you can broke something)
+(you can break something)
 -----------------------*/
 
 const (
