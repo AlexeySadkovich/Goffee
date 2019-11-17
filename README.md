@@ -13,7 +13,7 @@ or run setup_win.bat for windows</br>
 ```$ go build ./main.go```</br>
 
 ***Usage:***</br>
-1. Go to Goffe directory</br>
+1. Go to Goffee directory</br>
 2. Create admin</br>
 (For windows)</br>
 ```$ ./project_name create-admin```</br>
