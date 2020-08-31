@@ -1,4 +1,6 @@
 # Goffee
+## Do not use it for production because of security issuses and incompleteness
+### Work in progress
 
 ***Installation:***</br>
 1. Clone this repository</br>
